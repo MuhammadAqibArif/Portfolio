@@ -32,38 +32,6 @@ body{
     background-color: var(--bg-color);
     color: var(--text-color);
 }
-
-/* Whatsapp button style */
-.whatsapp_main {
-    position: fixed;
-    z-index: 100;
-    bottom: 50px;
-    right: 25px;
-    text-align: right;
-}
-
-.whatsapp_main .whatspp_img {
-    width: 68px;
-    height: 68px;
-    transition: width 0.3s, height 0.3s;
-    animation: vibrate 1s infinite alternate; 
-}
-
-.whatsapp_main .whatspp_img:hover {
-    width: 72px;
-    height: 72px;
-    animation: none; 
-}
-
-@keyframes vibrate {
-    0% { transform: translate(0, 0); }
-    25% { transform: translate(-2px, -2px); }
-    50% { transform: translate(0, 0); }
-    75% { transform: translate(2px, 2px); }
-    100% { transform: translate(0, 0); }
-}
-
-
 .header{
     position: fixed;
     top: 0;
@@ -233,6 +201,37 @@ section{
     align-items: center;
     animation: professionRotate 13s ease-out infinite;
 }
+
+/* Whatsapp button style */
+.whatsapp_main {
+    position: fixed;
+    z-index: 100;
+    bottom: 50px;
+    right: 25px;
+    text-align: right;
+}
+
+.whatsapp_main .whatspp_img {
+    width: 68px;
+    height: 68px;
+    transition: width 0.3s, height 0.3s;
+    animation: vibrate 1s infinite alternate; 
+}
+
+.whatsapp_main .whatspp_img:hover {
+    width: 72px;
+    height: 72px;
+    animation: none; 
+}
+
+@keyframes vibrate {
+    0% { transform: translate(0, 0); }
+    25% { transform: translate(-2px, -2px); }
+    50% { transform: translate(0, 0); }
+    75% { transform: translate(2px, 2px); }
+    100% { transform: translate(0, 0); }
+}
+
 
 @keyframes professionRotate {
     0%,20% {
