@@ -201,7 +201,6 @@ section{
     align-items: center;
     animation: professionRotate 13s ease-out infinite;
 }
-
 /* Whatsapp button style */
 .whatsapp_main {
     position: fixed;
@@ -209,6 +208,25 @@ section{
     bottom: 50px;
     right: 25px;
     text-align: right;
+}
+
+.whatsapp_container {
+    display: flex; /* Use flexbox for layout */
+    align-items: center; /* Align items vertically */
+}
+
+.message_away {
+    margin-right: 10px; /* Add margin between text and image */
+    background-color: white;
+    font-size: 16px;
+    padding: 5px;
+    border-radius: 15px;
+    opacity: 0; /* Initially hide the text */
+    transition: opacity 0.3s; /* Add transition for smooth opacity change */
+}
+
+.whatsapp_main:hover .message_away {
+    opacity: 1; /* Show the text on hover */
 }
 
 .whatsapp_main .whatspp_img {

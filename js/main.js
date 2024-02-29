@@ -109,34 +109,72 @@ const number = document.getElementById('Number');
 const subject = document.getElementById('Subject');
 const message = document.getElementById('Message');
 
-function sendEmail(){
+// function sendEmail(){
 
-const fullName = document.getElementById('Name');
+// const fullName = document.getElementById('Name');
+//   const bodyMessage = `Full Name: ${fullName.value} <br>
+//   Email: ${email.value} <br> 
+//   Number: ${number.value} <br> 
+//   Message: ${message.value}`
+
+//   Email.send({
+//     Host : "smtp.elasticemail.com",
+//     Username : "aqib5733@gmail.com",
+//     Password : "40872484735DDCFBC521187A487A55F86387",
+//     To : "aqib5733@gmail.com",
+//     From : "aqib5733@gmail.com",
+//     Subject : subject.value,
+//     Body : bodyMessage
+//   }).then(
+//   message => {
+//     if (message == "OK"){
+//       Swal.fire({
+//         title: "Success!",
+//         text: "Message Sent Successfully!",
+//         icon: "success"
+//       });
+//     }
+//   }
+//   );
+// }
+
+function sendEmail() {
+  const fullName = document.getElementById('Name');
   const bodyMessage = `Full Name: ${fullName.value} <br>
   Email: ${email.value} <br> 
   Number: ${number.value} <br> 
-  Message: ${message.value}`
+  Message: ${message.value}`;
 
   Email.send({
-    Host : "smtp.elasticemail.com",
-    Username : "aqib5733@gmail.com",
-    Password : "40872484735DDCFBC521187A487A55F86387",
-    To : "aqib5733@gmail.com",
-    From : "aqib5733@gmail.com",
-    Subject : subject.value,
-    Body : bodyMessage
-  }).then(
-  message => {
-    if (message == "OK"){
+    Host: "smtp.elasticemail.com",
+    Username: "aqib5733@gmail.com",
+    Password: "40872484735DDCFBC521187A487A55F86387",
+    To: "aqib5733@gmail.com",
+    From: "aqib5733@gmail.com",
+    Subject: subject.value,
+    Body: bodyMessage
+  })
+  .then(message => {
+    if (message === "OK") {
       Swal.fire({
         title: "Success!",
         text: "Message Sent Successfully!",
         icon: "success"
       });
+    } else {
+      throw new Error('Failed to send email');
     }
-  }
-  );
+  })
+  .catch(error => {
+    Swal.fire({
+      title: "Error!",
+      text: "Failed to send message. Please try again later.",
+      icon: "error"
+    });
+    console.error('Email sending error:', error);
+  });
 }
+
 
 form.addEventListener('submit', (e) => {
   e.preventDefault();
