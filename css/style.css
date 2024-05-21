@@ -168,9 +168,28 @@ section{
     font-weight: 600;
     border: .2rem solid transparent;
     transform: .5s ease;
+    margin-right: 2px;
 
 }
+.btn1 {
+    display: inline-block;
+    padding: 1.2rem 2.8rem;
+    background: var(--white-color);
+    border-radius: .6rem;
+    box-shadow: 0 .2rem .5rem var(--shadow-color);
+    font-size: 1.6rem;
+    color: var(--main-color);
+    letter-spacing: .1rem;
+    font-weight: 600;
+    border: .2rem solid var(--main-color);
+    transform: .5s ease;
+    margin-left: 2px;
 
+}
+.btn1:hover {
+    background: var(--main-color);
+    color: var(--white-color);
+}
 .btn:hover{
     background: transparent;
     color: var(--main-color);
@@ -653,6 +672,25 @@ span {
 }
 
 /* Breaks Points Media Queries */
+@media (min-width: 1400px) and (max-width: 3000px) {
+    .header{
+        background: var(--bg-color);
+    }
+    .header.sticky {
+        background-color: var(--bg-color);
+        box-shadow: 0 .1rem 1rem var(--shadow-color);
+    }
+    .navbar a {
+        color: var(--text-color);
+    }
+    .home-img img {
+        right: 45%;
+        width: 22%;
+    }
+    #darkMode-icon {
+        color: var(--text-color);
+    }
+}
 
 @media (max-width: 1200px) {
     html {
@@ -668,6 +706,9 @@ span {
     .home .profession-container .overlay{
         right: -9rem;
      }
+     .header{
+        background: transparent;
+    }
 }
 
 @media (max-width: 1024px) {
@@ -785,7 +826,7 @@ span {
     }
 
     .home-content h1 {
-        font-size: 5rem;
+        font-size: 4rem;
     }
 
     .home-content .social-media a {
@@ -908,7 +949,7 @@ span {
     }
 
     .home .profession-box .profession:nth-child(1){
-        transform: rotate(-90deg) translate(-110px, -220px);
+        transform: rotate(-90deg) translate(-110px, -226px)
     }
 
     .home .profession-box .profession:nth-child(2){
@@ -920,11 +961,19 @@ span {
     }
 
     .home .profession-box .profession:nth-child(4){
-        transform: rotate(180deg) translate(-210px, -335px);
+        transform: rotate(180deg) translate(-232px, -325px);
     }
 
     .contact form .input-box input {
         width: 100%;
+    }
+    .footer {
+        flex-direction: column-reverse;
+    }
+
+    .footer p {
+        text-align: center;
+        margin-top: 2rem;
     }
 }
 
